@@ -37,5 +37,8 @@ require('http').createServer(function (req, res){
 			res.writeHead(200, {'Content-Type' : 'text/html'});
 			res.end('<p>Your name is <b>' + qs.parse(body).name + '</b></p>');
 		});
+	}else{
+		res.writeHead(404);
+		res.end('Http Not Found');
 	}
 }).listen(3000);
